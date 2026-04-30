@@ -1,0 +1,18 @@
+# Pin-free; uv pip resolves from pyproject.toml. Kept for compatibility.
+litellm>=1.75,<2
+httpx[http2]>=0.28
+tenacity>=9
+tree-sitter>=0.25,<0.26
+tree-sitter-python>=0.25,<0.26
+tree-sitter-javascript>=0.25,<0.26
+rapidfuzz>=3.10
+diskcache>=5.6
+polars>=1.20
+duckdb>=1.1
+pandas>=2.2
+matplotlib>=3.9
+seaborn>=0.13
+jupyter
+python-dotenv
+tqdm
+stdlib-list>=0.10

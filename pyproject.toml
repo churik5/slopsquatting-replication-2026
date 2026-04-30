@@ -1,0 +1,48 @@
+[project]
+name = "slop-bench"
+version = "0.1.0"
+description = "Replication + 2026 frontier-model extension of Spracklen et al. USENIX Security 2025 package-hallucination study."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "MIT" }
+authors = [{ name = "Aleksandr Churilov" }]
+dependencies = [
+    "litellm>=1.75,<2",
+    "anthropic>=0.45",
+    "openai>=1.50",
+    "httpx[http2]>=0.28",
+    "tenacity>=9",
+    "tree-sitter>=0.25,<0.26",
+    "tree-sitter-python>=0.25,<0.26",
+    "tree-sitter-javascript>=0.25,<0.26",
+    "rapidfuzz>=3.10",
+    "diskcache>=5.6",
+    "polars>=1.20",
+    "duckdb>=1.1",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    "jupyter",
+    "python-dotenv",
+    "tqdm",
+    "stdlib-list>=0.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "pytest-cov>=5", "ruff>=0.7"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/slop_bench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "--cov=src/slop_bench --cov-report=term-missing"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

@@ -1,0 +1,82 @@
+# ── Secrets — never commit ─────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+secrets/
+
+# ── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# ── uv / pip ───────────────────────────────────────────────────────────────
+.uv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Jupyter ────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ── IDE / agent harness ────────────────────────────────────────────────────
+.idea/
+.vscode/
+.claude/
+*.swp
+
+# ── OS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Tests / coverage ───────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ── Logs / pickles / numpy dumps ───────────────────────────────────────────
+*.log
+*.pkl
+*.npy
+logs/
+runs/
+raw_responses/
+dumps/
+
+# ── SQLite database (current + WAL + SHM + every backup variant) ──────────
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.db.backup*
+*.db.backup*~
+
+# ── Live spend tracking (keeps personal billing private) ──────────────────
+data/spend.json
+data/spend*.json
+
+# ── On-disk cache ──────────────────────────────────────────────────────────
+data/cache/
+data/.cache/
+
+# ── Heavy regenerable master list (~53 MB) ─────────────────────────────────
+# Regenerate from upstream Spracklen — see README "Data access" section.
+data/master_lists/npm_package_names.csv
+
+# ── Spracklen prompt corpus (regenerable via Spracklen clone) ─────────────
+# Contains verbatim StackOverflow snippets with leaked third-party
+# credentials that were already public on StackOverflow before our use.
+# We do not redistribute them through this repository.
+data/prompts/
+
+# ── External upstream clone (regenerable via git clone) ───────────────────
+ext/

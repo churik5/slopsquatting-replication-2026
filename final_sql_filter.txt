@@ -1,0 +1,14 @@
+-- стандартный фильтр мусора
+AND h.package_norm NOT LIKE 'package:%'
+AND h.package_norm NOT LIKE '@/%'
+AND h.package_norm NOT LIKE 'your-%'
+AND h.package_norm NOT LIKE 'whatever%'
+AND h.package_norm NOT LIKE 'sample%'
+AND h.package_norm NOT LIKE '\$%' ESCAPE '\\'
+AND h.package_norm NOT LIKE '%@latest'
+AND h.package_norm NOT LIKE '%.jpg%'
+AND h.package_norm NOT LIKE '%.png%'
+AND h.package_norm != '~'
+AND h.package_norm != ','
+AND LENGTH(h.package_norm) <= 50
+AND h.package_norm NOT LIKE '% %'
