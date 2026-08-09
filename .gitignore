@@ -80,3 +80,4 @@ data/prompts/
 
 # ── External upstream clone (regenerable via git clone) ───────────────────
 ext/
+disclosure/
